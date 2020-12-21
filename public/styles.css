@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+body {
+    padding-top: 10px;
+    margin: 0px;
+    font-family: Abel, sans-serif;
+    background-color: #556182;
+}
+button {
+    border-radius: 5px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    position: relative;
+    background-color: #c17589;
+    height: 60px;
+    width: 1200px;
+    border: 2px solid white;
+}
+
+.navbar-item {
+    font-size: 26px;
+    font-weight: 1000;
+    padding: 2px;
+    align-items: center;
+    position: bottom;
+    right: -50px;
+    color: #f9f7f6;
+}
+
+ul {
+    bottom: 5px;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    padding: 0px 0px 0px 30px;
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.catagories {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.catagory-item {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 33.33%;
+    border: 2px solid white;
+    box-sizing: border-box;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+}
+
+.catagory-item-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.catagory-item-inner > div {
+    padding: 5px 10px;
+    background: black;
+    color: #969db2;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.brandName {
+    font-family: sacramento, sans-serif;
+    color: #f9f7f6;
+    text-shadow: 4px 4px black;
+    top: 50;
+    margin-top: 10px;
+    padding: 10px 80px 0 0;
+    font-size: 81px;
+    font-style: italic;
+    z-index: 20;
+    float: left;
+    display: flex;
+    position: left;
+}
+
+@media (max-width: 1000px) {
+    .catagory-item {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .catagory-item {
+        min-width: 100%;
+    }
+}
+
+.featured-products {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+    background-color: #969db2;
+}
+
+@media (max-width: 1000px) {
+    .featured-products {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .featured-products {
+        grid-template-columns: 1fr;
+    }
+}
+
+.featured-product-title {
+    margin: 0 auto;
+    text-align: center;
+    font-family: Sacramento, sans-serif;
+    font-size: 84px;
+    font-weight: 800;
+    background-color: #ddd;
+    max-width: 1200px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.featured-product-item {
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.featured-product-item-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.featured-product-item > .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.featured-product-item > .description {
+    color: whitesmoke;
+}
+
+.featured-product-item > .price {
+    font-style: italic;
+}
+
+button {
+    outline: none;
+    background-position: black;
+    font-size: "Abel", san-serif;
+    columns: white;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5ps;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+.item {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .featured-products {
+        width: 90%;
+        height: auto;
+    }
+    .brandName {
+        color: white;
+        font-size: 35px;
+        left: 10px;
+    }
+    .navbar-item {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    ul li {
+        font-size: 20px;
+        display: inline-block;
+        padding: 5px 7px 20px 0px;
+        display: inline-block;
+        justify-content: center;
+    }
+}
