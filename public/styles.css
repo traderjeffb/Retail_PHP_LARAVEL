@@ -183,9 +183,19 @@ button {
     margin: 10px 0px;
 }
 
-.item {
-    display: inline-block;
-    text-decoration: none;
+.tableData{
+    padding: 10px;
+    margin: 10px;
+    background-color: #ddd;
+    justify-content: center;
+}
+table{
+    margin:auto
+}
+.pageTitle{
+    font-size: xx-large;
+    margin:20px;
+    margin-left: 40px;
 }
 
 

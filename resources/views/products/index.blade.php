@@ -5,38 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
   <title>Products</title>
 </head>
 <body>
-  <p>
-    <h1>hello from index page</h1>
-  </p>
+    <div class="pageTitle">Index of Products</div>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th>Catagory</th>
+        <th>Product Number</th>
+        <th>Name</th>
+        <th>Retail Price</th>
+        <th>Cost</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">Catagory</th>
-        <th scope="row">Product Number</th>
-        <th scope="row">Name</th>
-        <th scope="row">Retail Price</th>
-        <th scope="row">Cost</th>
-        <th scope="row">Description</th>
-      </tr>
       @foreach($products as $product)
       <tr>
-        <td>{{$product['catagory']}}</td>
-        <td>{{$product['product_number']}}</td>
-        <td>{{$product['name']}}</td>
-        <td>{{$product['price']}}</td>
-        <td>{{$product['cost']}}</td>
-        <td>{{$product['description']}}</td>
+        <td class="tableData">{{$product['catagory']}}</td>
+        <td class="tableData">{{$product['product_number']}}</td>
+        <td class="tableData">{{$product['name']}}</td>
+        <td class="tableData">{{$product['price']}}</td>
+        <td class="tableData">{{$product['cost']}}</td>
+        <td class="tableData">{{$product['description']}}</td>
       </tr>
       @endforeach
     </tbody>
