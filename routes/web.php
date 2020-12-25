@@ -35,7 +35,9 @@ Route::get('/create',function(){
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/show', [ProductsController::class, 'show']);
-Route::get('/edit', [ProductsController::class, 'edit']);
+Route::get('/edit{id}', [ProductsController::class, 'edit{id}']);
+Route::get('/details{id}', [ProductsController::class, 'details{id}']);
+Route::get('/delete{id}', [ProductsController::class, 'delete{id}']);
 
 
 Route::get('/spcials',function(){

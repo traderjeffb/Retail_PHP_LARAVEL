@@ -30,7 +30,15 @@
         <td class="tableData">{{$product['price']}}</td>
         <td class="tableData">{{$product['cost']}}</td>
         <td class="tableData">{{$product['description']}}</td>
+        <td class="tableData" >
+          <a href="products/edit{id}">Edit</a>
+          <a href="/details">Details</a>
+          <a href="/delete">Delete</a>
+
+        </td>
       </tr>
+
+
       @endforeach
     </tbody>
   </table>
