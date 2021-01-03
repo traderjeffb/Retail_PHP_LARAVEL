@@ -60,16 +60,12 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function details($id)
     {
     
-        $products= Product::where('id',"=", 4)->first();
+        $products= Product::where('id',"=", "$id")->first();
 
-        // $products = DB::table('products')
-        // ->where('id', 4)->get();
-
-
-        return view('products.show', compact('products'));
+        return view('products.details', compact('products'));
     }
 
     /**
