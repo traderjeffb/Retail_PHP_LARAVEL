@@ -20,7 +20,6 @@ use App\Http\Controllers\ProductsController;
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::resource('products', 'ProductsController');
 
 Route::get('/index',function(){
     return view('products.index');
@@ -28,15 +27,16 @@ Route::get('/index',function(){
 Route::get('/create',function(){
     return view('products.create');
 });
-// Route::post('/store',function(){
-//     products/store;
-// });
-// Route::post('store', 'App/Http/Controllers/ProductsController@store')->name('products.store');
+Route::get('/home',function(){
+    return view('products.home');
+});
+
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/edit{id}', [ProductsController::class, 'edit{id}']);
 Route::get('/details{id}', [ProductsController::class, 'details{id}']);
 Route::get('/delete{id}', [ProductsController::class, 'delete{id}']);
+
 
 
 Route::get('/spcials',function(){
@@ -48,3 +48,6 @@ Route::view('/products.hats', 'hats');
 Route::view('/products.sunglasses', 'sunglasses');
 Route::view('/products.shoes', 'shoes');
 Route::view('/products.login', 'login');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
