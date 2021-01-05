@@ -19,7 +19,7 @@
               <a href="hats"><li>Hats</li></a> 
               <a href="sunglasses"><li>Sunglasses</li></a>  
               <a href="shoes"><li>Shoes</li></a> 
-             <a href="login>"><li>Login</li></a>
+             <a href="login"><li>Login</li></a>
             </ul>
           </div>
         </section>

@@ -32,8 +32,8 @@
         <td class="tableData">{{$product['description']}}</td>
         <td class="tableData" >
           <a href="products/edit{{$product['id']}}">Edit</a>
-          <a href="/details">Details</a>
-          <a href="/delete">Delete</a>
+          <a href="products/details{{$product['id']}}">Details</a>
+          <a href="products/delete{{$product['id']}}">Delete</a>
 
         </td>
       </tr>
