@@ -42,12 +42,13 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['catagory'=>'required | string',
-        'product_number'=>'required',
-        'name'=>'required',
-        'price'=>'required',
-        'cost'=>'required',
-        'description'=> 'required'
+        $request->validate([
+        'catagory'=>'required | string',
+        'product_number'=>'required|numeric|min:6|max:6',
+        'name'=>'required |unique:products',
+        'price'=>'required|numeric',
+        'cost'=>'required|numeric',
+        'description'=> 'required|string|max:100'
         ]);
         dd($request);
         Product::create($request->all());

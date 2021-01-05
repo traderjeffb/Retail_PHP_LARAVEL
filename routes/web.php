@@ -37,17 +37,6 @@ Route::get('/edit{id}', [ProductsController::class, 'edit{id}']);
 Route::get('/details/{id}', [ProductsController::class, 'details/{id}']);
 Route::get('/delete/{id}', [ProductsController::class, 'delete/{id}']);
 
-
-
-Route::get('/spcials',function(){
-    return view('products.specials');
-});
-Route::view('/products/specials', 'specials');
-Route::view('/products.tees', 'tees');
-Route::view('/products.hats', 'hats');
-Route::view('/products.sunglasses', 'sunglasses');
-Route::view('/products.shoes', 'shoes');
-Route::view('/products.login', 'login');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

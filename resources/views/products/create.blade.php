@@ -51,6 +51,11 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      @if (errors->any())
+      <div>
+        @foreach(errors->all()as $error)
+        <li style="color:red;">{{ $error }}</li>
+      </div>
     </div>
   </div>
 </div>    
