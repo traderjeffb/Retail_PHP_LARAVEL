@@ -62,9 +62,9 @@ class ProductsController extends Controller
      */
     public function details($id)
     {
-    
+        dd($id);
         $products= Product::where('id',"=", "$id")->first();
-
+        dd($products);
         return view('products.details', compact('products'));
     }
 
@@ -76,7 +76,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return view(view:'edit');
+        $puppy = "hello";
+        dd($puppy);
+        return view(view:'edit{$id}');
     }
 
     /**

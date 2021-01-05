@@ -34,8 +34,8 @@ Route::get('/home',function(){
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/edit{id}', [ProductsController::class, 'edit{id}']);
-Route::get('/details{id}', [ProductsController::class, 'details{id}']);
-Route::get('/delete{id}', [ProductsController::class, 'delete{id}']);
+Route::get('/details/{id}', [ProductsController::class, 'details/{id}']);
+Route::get('/delete/{id}', [ProductsController::class, 'delete/{id}']);
 
 
 
