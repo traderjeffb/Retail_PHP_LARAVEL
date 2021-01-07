@@ -19,7 +19,7 @@
 
   <div class="card">
     <div class="card-header text-center font-weight-bold">
-      Add a new product
+      Edit a product
     </div>
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store')}}">

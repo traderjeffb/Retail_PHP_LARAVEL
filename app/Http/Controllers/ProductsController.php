@@ -50,7 +50,7 @@ class ProductsController extends Controller
         'cost'=>'required|numeric',
         'description'=> 'required|string|max:100'
         ]);
-        dd($request);
+
         Product::create($request->all());
         return view(view:'products.index');
     }
@@ -77,9 +77,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $puppy = "hello";
-        dd($puppy);
-        return view(view:'edit{$id}');
+        
+        return view(view:'products.edit');
     }
 
     /**
