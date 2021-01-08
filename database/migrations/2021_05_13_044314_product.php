@@ -21,6 +21,7 @@ class Product extends Migration
             $table->decimal('price');
             $table->decimal('cost');
             $table->longText('description');
+            $table->decimal('inventory');
             $table->timestamp('failed_at')->useCurrent();
         });
     }
