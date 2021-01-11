@@ -13,15 +13,15 @@ class Product extends Migration
      */
     public function up()
     {
-        Schema::create(`products`, function (Blueprint $table) {
-            $table->blob('image');
+        Schema::create('products', function (Blueprint $table) {
+            $table->string('image');
             $table->string('product_number')->unique();
             $table->string('catagory');
             $table->string('name');
             $table->decimal('price');
             $table->decimal('cost');
             $table->longText('description');
-            $table->decimal('inventory');
+            $table->integer('inventory');
             $table->timestamp('failed_at')->useCurrent();
         });
     }
