@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class Product extends Migration
 {
@@ -13,18 +14,20 @@ class Product extends Migration
      */
     public function up()
     {
-        Schema::create(`products`, function (Blueprint $table) {
-            $table->blob('image');
+        Schema::create('products', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->string('image')->nullable();
             $table->string('product_number')->unique();
             $table->string('catagory');
             $table->string('name');
             $table->decimal('price');
             $table->decimal('cost');
             $table->longText('description');
-            $table->decimal('inventory');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->integer('inventory');
+            $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

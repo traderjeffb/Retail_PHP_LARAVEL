@@ -15,6 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        
         // $products = DB::table('Products')->get();
         $products = Product::all();
         // echo"<pre>";
@@ -31,6 +32,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
+       
         return view(view:'products.create');
     }
 
@@ -42,17 +44,19 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-        'catagory'=>'required | string',
-        'product_number'=>'required|numeric|min:6|max:6',
-        'name'=>'required |unique:products',
-        'price'=>'required|numeric',
-        'cost'=>'required|numeric',
-        'description'=> 'required|string|max:100'
-        ]);
+        // $validated = $request->validate([
+        //     'catagory'=>'required | string',
+        //     'product_number'=>'required|numeric| digits:6',
+        //     'name'=>'required ',
+        //     'price'=>'required|numeric',
+        //     'cost'=>'required|numeric',
+        //     'description'=> 'required|string|max:100',
+        //     'inventory'=> 'required | numeric'
+        //     ]);
+
 
         Product::create($request->all());
-        return view(view:'products.index');
+        return redirect('index');
     }
 
     /**

@@ -26,36 +26,55 @@
        @csrf
         <div class="form-group">
           <label for="imgage">Select image:</label>
-          <input type="file" id="imgage" name="imgage" accept="image/*">
+          <input type="file" id="imgage" name="imgage" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
-          <input type="text" id="catagory" name="catagory" class="form-control" required="" string>
+          <input type="text" id="catagory" name="catagory" class="form-control" required="" >
         </div>
         <div class="form-group">
           <label for="product_number">Product Number</label>
-          <input type="text" id="product_number" name="product_number" class="form-control" required="" numeric digits:6>
+          <input type="number" id="product_number" name="product_number" class="form-control" required="">
         </div>        <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="form-control" required="" string>
+          <input type="text" id="name" name="name" class="form-control" required="">
         </div>        <div class="form-group">
           <label for="price">Retail Price</label>
-          <input type="text" id="price" name="price" class="form-control" required="" numeric digits:5>
+          <input type="number" step="0.01"
+ id="price" name="price" class="form-control" required="">
         </div>        <div class="form-group">
           <label for="cost">Cost</label>
-          <input type="text" id="cost" name="cost" class="form-control" required="" numeric digits:5>
+          <input type="number" step="0.01"
+ id="cost" name="cost" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" class="form-control" required="" string></textarea>
+          <textarea name="description" class="form-control" required=""></textarea>
         </div>
+      </div>        <div class="form-group">
+        <label for="cost">Inventory</label>
+        <input type="number" step="0.01"
+id="inventory" name="inventory" class="form-control" required="">
+      </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-      @if (errors->any())
+      @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+      @endif
+
+      {{-- @if (errors->any())
       <div>
         @foreach(errors->all()as $error)
         <li style="color:red;">{{ $error }}</li>
       </div>
+      @endforeach
+      @endif --}}
     </div>
   </div>
 </div>    
