@@ -15,6 +15,7 @@ class Product extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+
             $table->integer('id')->primary();
             $table->string('image')->nullable();
             $table->string('product_number')->unique();
@@ -25,6 +26,7 @@ class Product extends Migration
             $table->longText('description');
             $table->integer('inventory');
             $table->timestamps();
+
         });
     }
     
