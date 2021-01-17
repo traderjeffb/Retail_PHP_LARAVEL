@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Factory;
 use Illuminate\Database\Seeder;
 
 class EmployeeSeeder extends Seeder
@@ -13,6 +14,6 @@ class EmployeeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Employee::class, 10)->create();
     }
 }
