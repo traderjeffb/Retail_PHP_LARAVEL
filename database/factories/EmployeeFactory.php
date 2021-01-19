@@ -4,6 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as faker;
+use Illuminate\Support\Str;
+
 
 class EmployeeFactory extends Factory
 {
@@ -12,7 +15,7 @@ class EmployeeFactory extends Factory
      *
      * @var string
      */
-    protected $model = Employee::class;
+    protected $model = \App\Models\employee::class;
 
     /**
      * Define the model's default state.
