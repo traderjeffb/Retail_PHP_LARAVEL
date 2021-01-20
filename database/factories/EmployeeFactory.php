@@ -15,7 +15,7 @@ class EmployeeFactory extends Factory
      *
      * @var string
      */
-    protected $model = \App\Models\employee::class;
+    protected $model = \App\Models\Employee::class;
 
     /**
      * Define the model's default state.
@@ -25,14 +25,14 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         return [
-            'first' => $this->faker->name(),
-            'last' => $this->faker->name(),
+            'first' => $this->faker->first_name(),
+            'last' => $this->faker->last_name(),
             'email' => $this->faker->unique()->safeEmail(),
             'street_address'=>$this->faker->address(),
             'city'=>$this->faker->city(),
             'state'=>$this->faker->state(),
-            'department'=>$this->faker->department(),
-            'salary'=>$this->faker->salary(),
+            'department'=>$this->faker->randomElement(['Sales','Shipping','Mangement']),
+            'salary'=>$this->faker->randomElement(['30000','40000','50000','65000']),
         ];
     }
 }

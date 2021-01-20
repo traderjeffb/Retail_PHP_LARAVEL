@@ -9,7 +9,7 @@
   <title>Employees</title>
 </head>
 <body>
-    <div class="pageTitle">Index of Employees</div>
+    <div class="pageTitle"><h3>Index of Employees</h3></div>
   <table class="table">
     <thead>
       <tr>
@@ -32,11 +32,6 @@
         <td class="tableData">{{$employee['street_address']}}</td>
         <td class="tableData">{{$employee['city']}}</td>
         <td class="tableData">{{$employee['state']}}</td>
-        <td class="tableData" >
-        <td class="tableData">{{$employee['state']}}</td>
-        <td class="tableData" >
-        <td class="tableData">{{$employee['state']}}</td>
-        <td class="tableData" >
         <td class="tableData">{{$employee['department']}}</td>
         <td class="tableData" >
         <td class="tableData">{{$employee['salary']}}</td>
