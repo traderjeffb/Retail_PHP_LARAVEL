@@ -25,7 +25,7 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        //
+        return view(view:'employees.create');
     }
 
     /**
