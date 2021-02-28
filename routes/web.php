@@ -50,3 +50,4 @@ Route::get('/item', function () {
 
 //employee routes
 Route::get('/employees/index', [EmployeesController::class, 'index']);
+Route::get('/employees/create', [EmployeesController::class, 'create']);
