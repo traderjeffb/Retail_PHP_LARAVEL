@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
           <label for="first">First Name</label>
-          <input type="text" id="first" name="fisrt" class="form-control" required="" >
+          <input type="text" id="first" name="first" class="form-control" required="" >
         </div>
         <div class="form-group">
           <label for="product_number">Last Name</label>
@@ -45,21 +45,20 @@
           <input type="string" id="street_address" name="street_address" class="form-control" required="">
         </div>       
         <div class="form-group">
-          <label for="cost">City</label>
-          <input type="number" step="0.01"
- id="cost" name="cost" class="form-control" required="">
+          <label for="city">City</label>
+          <input type="number" id="city" name="city" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="state">State</label>
-          <textarea name="state" class="form-control" required=""></textarea>
+          <input type="string" id="state" name="state" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="department">Department</label>
-          <input type="text" id="department" name="department" class="form-control" required="">
+          <input type="string" id="department" name="department" class="form-control" required="">
        </div>
        <div class="form-group">
         <label for="salary">Salary</label>
-        <input type="number" id="number" name="number" class="form-control" required="">
+        <input type="number" id="salary" name="salary" class="form-control" required="">
      </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
