@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
+use Faker\Core\Number;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -24,14 +25,15 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [  
-            'image'=>$this->faker->Str::random(10),
-            'product_number' => $this->faker->randomElement(['30000','40000','50000','65000']),
+            'id'=>$this->faker->randomNumber($nbDigits=null,$strict=false),
+            'image'=>$this->faker->randomElement(['image1','image2','image3','image4']),
+            'product_number' => $this->faker->randomNumber($nbDigits=4,$strict=true),
             'catagory' => $this->faker->randomElement(['Tees','Sunglasses','Shoes','Hats']),
-            'name' => $this->faker->unique()->words(),
-            'price'=>$this->faker->randomElement(['30000','40000','50000','65000']),
+            'name' => $this->faker->randomElement(['Big Shoes','Silk sox','blue hat','shaders']),
+            'price'=>$this->faker->randomElement(['30','40','50','65']),
             'cost'=>$this->faker->randomElement(['30000','40000','50000','65000']),            
-            'description'=>$this->faker->Str::random(10),
-            'inventory'=>$this->faker->randomNumber(),
+            'description'=>$this->faker->randomElement(['white','colorful','cool','hot']),
+            'inventory'=>$this->faker->randomElement(['3','4','5','6']),
         //     'image'=>$this->faker->sentence($nbWords =4,$varialbeNbWords=true),
         //     'product_number' => $this->faker->numberBetween($int1 =4,$int2=9),
         //     'catagory' => $this->faker->randomElement(['Tees','Sunglasses','Shoes','Hats']),
