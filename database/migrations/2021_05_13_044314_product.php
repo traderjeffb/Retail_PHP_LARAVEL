@@ -18,7 +18,7 @@ class Product extends Migration
 
             $table->integer('id')->primary();
             $table->string('image')->nullable();
-            $table->string('product_number')->unique();
+            $table->string('product_number');
             $table->string('catagory');
             $table->string('name');
             $table->decimal('price');
