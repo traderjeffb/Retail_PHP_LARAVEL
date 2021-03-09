@@ -109,4 +109,17 @@ class ProductsController extends Controller
         $products= Product::where('id',"=", "$id")->first();
 
     }
+    public function item($catagory)
+    {
+        $products= Product::where('catagory','=','$catagory')->all();
+        return view('products.item',compact ('products'));
+
+    }
+    public function welcome()
+    {
+        $products = Product::all();
+        return view('welcome', compact('products'));
+
+    }
+
 }
