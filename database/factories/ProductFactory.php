@@ -26,8 +26,7 @@ class ProductFactory extends Factory
     {
         return [  
             'id'=>$this->faker->randomNumber($nbDigits=null,$strict=false),
-            //'image'=>$this->faker->randomElement(['image1','image2','image3','image4']),
-            
+            'image'=>$this->faker->randomElement(['image1','image2','image3','image4']),
             'product_number' => $this->faker->randomNumber($nbDigits=4,$strict=true),
             'catagory' => $this->faker->randomElement(['Tees','Sunglasses','Shoes','Hats']),
             'name' => $this->faker->randomElement(['Big Shoes','Silk sox','blue hat','shaders']),
