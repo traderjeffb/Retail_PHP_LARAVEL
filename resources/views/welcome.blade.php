@@ -46,7 +46,8 @@
         style="background-image: url('images/tshirt.jpg')"
       >
         <div class="catagory-item-inner">
-          <div>tshirts</div>
+          <div><a href="products/item{{$product['catagory']}}">Tshirtsss</a></div>
+          
         </div>
       </div>
       <div:hover {border:5px solid white;}
