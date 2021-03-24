@@ -19,9 +19,9 @@ use App\Http\Controllers\EmployeesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/index',function(){
 //     return view('products.index');
@@ -32,13 +32,14 @@ Route::get('/', function () {
 // Route::get('/home',function(){
 //     return view('products.home');
 // });
-
+Route::get('/', [ProductsController::class, 'welcome']);
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/edit/{id}', [ProductsController::class, 'edit']);
 Route::get('/details/{id}', [ProductsController::class, 'details']);
 Route::get('/delete/{id}', [ProductsController::class, 'delete']);
 Route::get('/create', [ProductsController::class, 'create']);
+Route::get('/item', [ProductController::class, 'item']);
 
 Auth::routes();
 
