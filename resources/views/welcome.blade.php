@@ -46,7 +46,7 @@
         style="background-image: url('images/tshirt.jpg')"
       >
         <div class="catagory-item-inner">
-          <div><a href="products/item{{$product['catagory']}}">Tshirtsss</a></div>
+          <div><a href="/item" name='Tees' id='Tees' catagory= 'Tees' value="{{ catagory }}">Tees</a></div>
           
         </div>
       </div>
