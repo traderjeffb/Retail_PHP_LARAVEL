@@ -115,11 +115,16 @@ class ProductsController extends Controller
         $products = Product::all();
         return view('welcome', compact('products'));
     }
-    
-    public function item($catagory)
+
+    public function item()
     {
-        dd('hello');
-        $products= Product::where('catagory','=','$catagory')->all();
+        //$products= Product::where('catagory','=','$catagory')->all();
+        //$products = Product::all();
+        $products= Product::where('catagory','hats')->get();
+        
+        // echo"<pre>";
+        // print_r($products);
+        // exit();
         return view('products.item',compact ('products'));
     }
 }
