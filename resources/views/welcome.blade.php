@@ -46,7 +46,7 @@
         style="background-image: url('images/tshirt.jpg')"
       >
         <div class="catagory-item-inner">
-          <div><a href="/item" name='Tees' id='Tees' catagory= 'Tees' value="{{ catagory }}">Tees</a></div>
+          <div><a href="{{ route('item')}}">Tees</a></div>
           
         </div>
       </div>
