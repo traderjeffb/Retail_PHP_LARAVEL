@@ -35,7 +35,9 @@ Route::get('/edit/{id}', [ProductsController::class, 'edit']);
 Route::get('/details/{id}', [ProductsController::class, 'details']);
 Route::get('/delete/{id}', [ProductsController::class, 'delete']);
 Route::get('/create', [ProductsController::class, 'create']);
-Route::get('/item/{catagory}', [ProductsController::class, 'item']);
+Route::get('/item', [ProductsController::class, 'item'])->name('item');
+
+
 
 Auth::routes();
 
