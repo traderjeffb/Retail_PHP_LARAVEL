@@ -53,7 +53,7 @@ class ProductsController extends Controller
         //     'description'=> 'required|string|max:100',
         //     'inventory'=> 'required | numeric'
         //     ]);
-
+            // dd($request);
 
         Product::create($request->all());
         return redirect('index');
