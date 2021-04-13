@@ -198,7 +198,11 @@ table{
     margin-left: 40px;
 }
 
-
+.card{
+    width: auto;
+    margin:20px;
+    display: inline-block;
+}
 
 
 
