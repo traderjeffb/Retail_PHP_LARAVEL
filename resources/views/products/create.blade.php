@@ -22,7 +22,7 @@
       Add a new product
     </div>
     <div class="card-body">
-      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store')}}">
+      <form name="add-blog-post-form" id="add-blog-post-form" method="post" enctype="multipart/form-data" action="{{url('store')}}">
        @csrf
         <div class="form-group">
           <label for="imgage">Select image:</label>
