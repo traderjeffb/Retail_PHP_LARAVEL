@@ -12,8 +12,8 @@
 </head>
 <body>
 @foreach($products as $product)
-<h1>Here are our currently available {{ $product['catagory'] }}</h1>
-<div class="card-deck">
+{{-- <h1>Here are our currently available {{ $product['catagory'] }}</h1> --}}
+{{-- <div class="card-deck">
   <div class="card">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
@@ -21,6 +21,14 @@
       <p class="card-text">{{ $product['description'] }}</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
+  </div>
+</div> --}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ $product['name']}}</h5>
+    <p class="card-text">{{ $product['description'] }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 @endforeach
