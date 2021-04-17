@@ -197,11 +197,10 @@ table{
     margin:20px;
     margin-left: 40px;
 }
-
-.card{
-    width: auto;
-    margin:20px;
+.container{
     display: inline-block;
+    width: 300px;
+    height: auto;
 }
 
 
