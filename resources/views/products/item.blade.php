@@ -15,9 +15,27 @@
 <body>
 <div class="container">
   @foreach($products as $product)
-{{-- <h1>Here are our currently available {{ $product['catagory'] }}</h1> --}}
-  <div class="card-deck row col-md-4">
-    <div class="card featured-product-item">
+  {{-- <h1>Here are our currently available {{ $product['catagory'] }}</h1> --}}
+  <div class="card-deck row ">
+    <div class="card row-md-4 ">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ $product['name']}}</h5>
+        <p class="card-text">{{ $product['description'] }}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    @continue;
+    <div class="card row-md-4  ">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ $product['name']}}</h5>
+        <p class="card-text">{{ $product['description'] }}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    @continue;
+    <div class="card row-md-4 ">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ $product['name']}}</h5>
@@ -26,8 +44,8 @@
       </div>
     </div>
   </div>
+  @endforeach
 </div>
-@endforeach
 </div>
 </body>
 </html>
