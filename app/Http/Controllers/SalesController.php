@@ -11,6 +11,8 @@ class SalesController extends Controller
     {
         $products= Product::where('id',"=", "$id")->first();
         $cart = $cart + $products
+
+        return view(Sale.cart);
     }
 
 
