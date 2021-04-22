@@ -48,3 +48,6 @@ Route::get('/employees/index', [EmployeesController::class, 'index']);
 Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees/store', [EmployeesController::class, 'store']);
 
+//sales and reporting routes
+Route::get('sales/cart', [SalesController::class, 'addItem'])->name('addItem');
+
