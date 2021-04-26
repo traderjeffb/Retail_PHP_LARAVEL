@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 class SalesController extends Controller
 {
     
-    public function AddItem(id)
+    public function addItem($id)
     {
-        $products= Product::where('id',"=", "$id")->first();
-        $cart = $cart + $products
+        dd('made it to salescontroller');
+        $cart=[];
+        $cart = $cart + $id;
+        dd($cart);
+        //$products= Product::where('id',"=", "$id")->all();
+        
 
-        return view(Sale.cart);
+        //return view(Sale.cart);
     }
 
 
