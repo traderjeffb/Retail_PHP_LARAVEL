@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\EmployeesController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +15,6 @@ use App\Http\Controllers\EmployeesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/index',function(){
-//     return view('products.index');
-// });
 
 //  ProductsController Routes
 Route::get('/', [ProductsController::class, 'welcome']);
@@ -49,5 +38,6 @@ Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees/store', [EmployeesController::class, 'store']);
 
 //sales and reporting routes
-Route::get('sales/cart', [SalesController::class, 'addItem'])->name('addItem');
+Route::get('/sales/addItem', [SalesController::class, 'addItem'])->name('addItem');
+//Route::get('/sales/addItem', [App\Http\Controllers\SalesController::class, 'addItem'])->name('addItem');
 
