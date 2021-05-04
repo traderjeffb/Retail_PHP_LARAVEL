@@ -9,7 +9,7 @@
   <title>Products</title>
 </head>
 <body>
-    <div class="pageTitle">Index of Products</div>
+    <div class="pageTitle">This is your Cart</div>
   <table class="table">
     <thead>
       <tr>
