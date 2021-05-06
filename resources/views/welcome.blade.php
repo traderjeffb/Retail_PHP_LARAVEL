@@ -30,7 +30,7 @@
         style="background-image: url('images/shoes.jpg')"
       >
         <div class="catagory-item-inner">
-          <div>shoes</div>
+          <div><a href="{{ route('item')}}">Shoes</a></div>
         </div>
       </div>
       <div
@@ -38,7 +38,7 @@
         style="background-image: url('images/hats.jpg')"
       >
         <div class="catagory-item-inner">
-          <div>hats</div>
+          <div><a href="{{ route('item')}}">Hats</a></div>
         </div>
       </div>
       <div
