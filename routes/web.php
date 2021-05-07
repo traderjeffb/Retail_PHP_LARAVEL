@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\ProductsController
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\SalesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,6 @@ Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees/store', [EmployeesController::class, 'store']);
 
 //sales and reporting routes
-Route::get('/sales/addItem', [SalesController::class, 'addItem'])->name('addItem');
+Route::get('sales/addItem/{id}', [SalesController::class, 'addItem'])->name('addItem');
 //Route::get('/sales/addItem', [App\Http\Controllers\SalesController::class, 'addItem'])->name('addItem');
 
