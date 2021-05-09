@@ -44,16 +44,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // $validated = $request->validate([
-        //     'catagory'=>'required | string',
-        //     'product_number'=>'required|numeric| digits:6',
-        //     'name'=>'required ',
-        //     'price'=>'required|numeric',
-        //     'cost'=>'required|numeric',
-        //     'description'=> 'required|string|max:100',
-        //     'inventory'=> 'required | numeric'
-        //     ]);
-            // dd($request);
+          //  $request->validate([
+          //  'image_path'=> 'required | mimes: jpg, png, jpeg ',
+            // 'catagory'=>'required',
+            // 'product_number'=>'required',
+            // 'name'=>'required ',
+            // 'price'=>'required',
+            // 'cost'=>'required',
+            // 'description'=> 'required',
+            // 'inventory'=> 'required'
+         //   ]);
+dd($request);
+            $newImageName = $request->name . '-' . time() . '.' . $request->image_path->extention();
+            dd($newImageName);
+            $request->image->move(public_path('images'),$newImageName);
+            //dd($request);
 
         Product::create($request->all());
         return redirect('index');
