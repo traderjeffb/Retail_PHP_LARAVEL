@@ -17,7 +17,6 @@ class Product extends Migration
         Schema::create('products', function (Blueprint $table) {
 
             $table->integer('id')->primary();
-            $table->string('image')->nullable();
             $table->string('product_number');
             $table->string('catagory');
             $table->string('name');
