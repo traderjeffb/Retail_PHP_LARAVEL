@@ -16,7 +16,6 @@
         {{ session('status') }}
     </div>
   @endif
-
   <div class="card">
     <div class="card-header text-center font-weight-bold">
       Add a new product
@@ -25,8 +24,8 @@
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" enctype="multipart/form-data" action="{{url('store')}}">
        @csrf
         <div class="form-group">
-          <label for="imgage">Select image:</label>
-          <input type="file" id="imgage" name="imgage" >
+          <label for="imgage_path">Select image:</label>
+          <input type="file" id="imgage_path" name="imgage_path" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
@@ -41,11 +40,11 @@
         </div>        <div class="form-group">
           <label for="price">Retail Price</label>
           <input type="number" step="0.01"
- id="price" name="price" class="form-control" required="">
+            id="price" name="price" class="form-control" required="">
         </div>        <div class="form-group">
           <label for="cost">Cost</label>
           <input type="number" step="0.01"
- id="cost" name="cost" class="form-control" required="">
+            id="cost" name="cost" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="description">Description</label>
@@ -54,7 +53,7 @@
       </div>        <div class="form-group">
         <label for="cost">Inventory</label>
         <input type="number" step="0.01"
-id="inventory" name="inventory" class="form-control" required="">
+          id="inventory" name="inventory" class="form-control" required="">
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -73,7 +72,7 @@ id="inventory" name="inventory" class="form-control" required="">
         @foreach(errors->all()as $error)
         <li style="color:red;">{{ $error }}</li>
       </div>
-      @endforeach
+      @endforeach 
       @endif --}}
     </div>
   </div>
