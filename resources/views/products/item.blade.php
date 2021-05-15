@@ -16,8 +16,8 @@
 <div class="container">
   @foreach($products as $product)
   {{-- <h1>Here are our currently available {{ $product['catagory'] }}</h1> --}}
-  <div class="card-deck row ">
-    <div class="card row-md-4 ">
+  <div class="card-deck row-md-4 ">
+    <div class="card  ">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ $product['name']}}</h5>
@@ -27,7 +27,7 @@
       </div>
     </div>
     @continue;
-    <div class="card row-md-4  ">
+    <div class="card  ">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ $product['name']}}</h5>
@@ -37,7 +37,7 @@
       </div>
     </div>
     @continue;
-    <div class="card row-md-4 ">
+    <div class="card  ">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ $product['name']}}</h5>
