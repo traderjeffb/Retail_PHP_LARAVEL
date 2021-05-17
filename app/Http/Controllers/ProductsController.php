@@ -45,7 +45,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
           //  $request->validate([
-          //  'image_path'=> 'required | mimes: jpg, png, jpeg ',
+          // 'image_path'=> 'required | mimes: jpg, png, jpeg ',
             // 'catagory'=>'required',
             // 'product_number'=>'required',
             // 'name'=>'required ',
@@ -54,10 +54,13 @@ class ProductsController extends Controller
             // 'description'=> 'required',
             // 'inventory'=> 'required'
          //   ]);
-dd($request);
-            $newImageName = $request->name . '-' . time() . '.' . $request->image_path->extention();
-            dd($newImageName);
-            $request->image->move(public_path('images'),$newImageName);
+//dd($request);
+//dd($request->name, $request->image_path);
+            $newImageName = $request->name . ' hello';
+            
+            //. '-' . $request->created_at . '.' . $request->image_path->extention();
+            //dd($newImageName);
+            $request->image->move(public_path('public/images'),$newImageName);
             //dd($request);
 
         Product::create($request->all());
