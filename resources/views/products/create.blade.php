@@ -25,7 +25,7 @@
        @csrf
         <div class="form-group">
           <label for="imgage_path">Select image:</label>
-          <input type="file" id="imgage_path" name="imgage_path" >
+          <input type="file" id="image_path" name="image_path" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
