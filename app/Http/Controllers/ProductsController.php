@@ -15,7 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        
+        $products = Product::find(2754);
+        $accessor = $products->name;
+        dd($accessor);
         // $products = DB::table('Products')->get();
         $products = Product::all();
         // echo"<pre>";
@@ -56,15 +58,25 @@ class ProductsController extends Controller
          //   ]);
 //dd($request);
 //dd($request->name, $request->image_path);
-            $newImageName = $request->name . ' hello';
-            
+//dd($request->all());
+        $imageName = time().'.'.$request->image_path->extension();  
+        $request->image_path->move(public_path('images'), $imageName);
+            dd("anything");
+
+  //          $newImageName = $request->name . ' website';
+            //dd($newImageName); //<-works fine
             //. '-' . $request->created_at . '.' . $request->image_path->extention();
             //dd($newImageName);
-            $request->image->move(public_path('public/images'),$newImageName);
+          //  dd(public_path());
+            // $request->image->move(public_path('images'),$newImageName);
+            // $request->image->store(public_path('images'),$newImageName);
+            return $newImageName;
+
             //dd($request);
 
-        Product::create($request->all());
-        return redirect('index');
+       Product::create($request->all());
+       return redirect('index');
+
     }
 
     /**
@@ -124,12 +136,13 @@ class ProductsController extends Controller
         return view('welcome', compact('products'));
     }
 
-    public function item()
+    public function item(Request $request)
     {
         //$products= Product::where('catagory','=','$catagory')->all();
         //$products = Product::all();
-        $products= Product::where('catagory','hats')->get();
-        
+        dd($request);
+
+        $products= Product::where('catagory', $request->catagory)->get();
         // echo"<pre>";
         // print_r($products);
         // exit();
