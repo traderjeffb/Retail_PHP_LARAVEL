@@ -58,9 +58,9 @@ class ProductsController extends Controller
             ]);
         } catch (Error $e) {
             //report($e);
-                echo"<pre>";
-                print_r($e);
-                exit();
+            foreach ($e as $message) {
+                echo ($e);
+            }
             return false;
         }
         $imageName = time().'.'.$request->image_path->extension();  
@@ -124,8 +124,12 @@ class ProductsController extends Controller
 
     public function welcome()
     {
-        $products = Product::all();
-        return view('welcome', compact('products'));
+        return view('welcome');
+    }
+    public function jeff($functionwillstoreValueInthisParameter)
+    {
+        //return view('welcome');
+        dd($functionwillstoreValueInthisParameter);
     }
 
     public function item()
