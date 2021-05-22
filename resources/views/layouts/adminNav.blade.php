@@ -21,7 +21,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="href="{{ route('home')}}"">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ route('home')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Other</a>
@@ -41,9 +41,9 @@
           Products
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ route('products/create')}}">Add New Product</a>
-          <a class="dropdown-item" href="{{ route('products/edit/{id}')}}">Edit Information</a>
-          <a class="dropdown-item" href="{{ route('products/delete')}}">Delete Product</a>
+          <a class="dropdown-item" href="{{ route('home')}}">Add New Product</a>
+          <a class="dropdown-item" href="{{ route('home')}}">Edit Information</a>
+          <a class="dropdown-item" href="{{ route('home')}}">Delete Product</a>
         </div>
       </li>
       <li class="nav-item dropdown">
