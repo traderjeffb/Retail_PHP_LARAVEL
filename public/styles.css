@@ -197,16 +197,16 @@ table{
     margin:20px;
     margin-left: 40px;
 }
-.container{
+/* .container{
     display: inline-block;
     width: 300px;
     height: auto;
-}
-
+} */
+/* 
 .card-body{
     width: 276px;
     height: 400px;
-}
+} */
 
 
 @media only screen and (max-width: 1000px) {
