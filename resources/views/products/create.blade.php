@@ -24,7 +24,7 @@
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" enctype="multipart/form-data" action="{{url('store')}}">
        @csrf
         <div class="form-group">
-          <label for="imgage_path">Select image:</label>
+          <label for="image_path">Select image:</label>
           <input type="file" id="image_path" name="image_path" >
         </div>
         <div class="form-group">
