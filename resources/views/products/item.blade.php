@@ -37,7 +37,7 @@
       </div>
     </div>
     @continue;
-    <div class="card  ">
+    <div class="card row-md-4 ">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ $product['name']}}</h5>
