@@ -61,7 +61,7 @@ class ProductsController extends Controller
 //dd($request->all());
         $imageName = time().'.'.$request->image_path->extension();  
         $request->image_path->move(public_path('images'), $imageName);
-            dd("anything");
+            //dd("anything");
 
   //          $newImageName = $request->name . ' website';
             //dd($newImageName); //<-works fine
@@ -70,7 +70,7 @@ class ProductsController extends Controller
           //  dd(public_path());
             // $request->image->move(public_path('images'),$newImageName);
             // $request->image->store(public_path('images'),$newImageName);
-            return $newImageName;
+            //return $newImageName;
 
             //dd($request);
 
@@ -136,13 +136,14 @@ class ProductsController extends Controller
         return view('welcome', compact('products'));
     }
 
-    public function item(Request $request)
-    {
-        //$products= Product::where('catagory','=','$catagory')->all();
+    public function item()
+    {   
+        $products= Product::where('catagory','=','hats')->get();
         //$products = Product::all();
-        dd($request);
+        
+        //dd($request);
 
-        $products= Product::where('catagory', $request->catagory)->get();
+     //   $products= Product::where('catagory', $request->catagory)->get();
         // echo"<pre>";
         // print_r($products);
         // exit();
