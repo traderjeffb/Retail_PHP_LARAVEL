@@ -24,10 +24,10 @@
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('employees/store')}}">
        @csrf
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="imgage">Select image:</label>
           <input type="file" id="imgage" name="imgage" >
-        </div>
+        </div> --}}
         <div class="form-group">
           <label for="first">First Name</label>
           <input type="text" id="first" name="first" class="form-control" required="" >
@@ -46,7 +46,7 @@
         </div>       
         <div class="form-group">
           <label for="city">City</label>
-          <input type="number" id="city" name="city" class="form-control" required="">
+          <input type="string" id="city" name="city" class="form-control" required="">
         </div>
         <div class="form-group">
           <label for="state">State</label>
