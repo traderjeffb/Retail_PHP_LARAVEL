@@ -15,10 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::find(2754);
-        $accessor = $products->name;
-        dd($accessor);
-        // $products = DB::table('Products')->get();
+        // $products = Product::find(2754);
+        // $accessor = $products->name;
+        // dd($accessor);
         $products = Product::all();
         // echo"<pre>";
         // print_r($products);
@@ -34,8 +33,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-       
-        return view(view:'products.create');
+        return view('products.create');
     }
 
     /**
@@ -46,21 +44,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-          //  $request->validate([
-          // 'image_path'=> 'required | mimes: jpg, png, jpeg ',
-            // 'catagory'=>'required',
-            // 'product_number'=>'required',
-            // 'name'=>'required ',
-            // 'price'=>'required',
-            // 'cost'=>'required',
-            // 'description'=> 'required',
-            // 'inventory'=> 'required'
-         //   ]);
+        //    $request->validate([
+        //     'image_path'=> 'required | mimes: jpg, png, jpeg ',
+        //     'catagory'=>'required',
+        //     'product_number'=>'required',
+        //     'name'=>'required ',
+        //     'price'=>'required',
+        //     'cost'=>'required',
+        //     'description'=> 'required',
+        //     'inventory'=> 'required'
+        //    ]);
 //dd($request);
 //dd($request->name, $request->image_path);
 //dd($request->all());
         $imageName = time().'.'.$request->image_path->extension();  
-        $request->image_path->move(public_path('images'), $imageName);
+         $temp= $request->image_path->move(public_path('images'), $imageName);
             //dd("anything");
 
   //          $newImageName = $request->name . ' website';
@@ -73,6 +71,11 @@ class ProductsController extends Controller
             //return $newImageName;
 
             //dd($request);
+            // $product = new Product ;
+            // $product->image_path = $temp;
+            // $request->image_path=$temp;
+            // echo  $temp ;
+            // dd($request->image_path);
 
        Product::create($request->all());
        return redirect('index');
