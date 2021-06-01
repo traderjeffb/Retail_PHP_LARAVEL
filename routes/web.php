@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\SalesController;
+use Illuminate\Support\Facades\Auth;
+
+//use App\Http\Controllers\Auth;
 
 
 /*
@@ -27,7 +30,6 @@ Route::get('/details/{id}', [ProductsController::class, 'details']);
 Route::get('/delete/{id}', [ProductsController::class, 'delete']);
 Route::get('/create', [ProductsController::class, 'create']);
 Route::get('/item', [ProductsController::class, 'item'])->name('item');
-
 
 
 Auth::routes();
