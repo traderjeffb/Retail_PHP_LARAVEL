@@ -19,7 +19,7 @@
               <a href="hats"><li>Hats</li></a> 
               <a href="sunglasses"><li>Sunglasses</li></a>  
               <a href="shoes"><li>Shoes</li></a> 
-             <a href="login"><li>Login</li></a>
+              <a href="login"><li>Login</li></a>
             </ul>
           </div>
         </section>
@@ -46,7 +46,10 @@
         style="background-image: url('images/tshirt.jpg')"
       >
         <div class="catagory-item-inner">
-          <div><a href="{{ route('item')}}">Tees</a></div>
+          {{-- <div><a href="{{ route('item')}}">Tees</a></div> --}}
+          <div><a  href="{{ route('item')}}">Tees</a></div>
+                        
+          
           
         </div>
       </div>
