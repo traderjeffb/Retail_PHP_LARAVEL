@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\product;
+use Error;
 use Product as GlobalProduct;
 
 class ProductsController extends Controller
@@ -44,41 +45,27 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //    $request->validate([
-        //     'image_path'=> 'required | mimes: jpg, png, jpeg ',
-        //     'catagory'=>'required',
-        //     'product_number'=>'required',
-        //     'name'=>'required ',
-        //     'price'=>'required',
-        //     'cost'=>'required',
-        //     'description'=> 'required',
-        //     'inventory'=> 'required'
-        //    ]);
-//dd($request);
-//dd($request->name, $request->image_path);
-//dd($request->all());
+        try{
+            $request->validate([
+                'image_path'=> 'required | mimes: jpg, png, jpeg ',
+                'catagory'=>'required',
+                'product_number'=>'required',
+                'name'=>'required ',
+                'price'=>'required',
+                'cost'=>'required',
+                'description'=> 'required',
+                'inventory'=> 'required'
+            ]);
+        } catch (Error $e) {
+            report($e);
+            
+            return false;
+        }
         $imageName = time().'.'.$request->image_path->extension();  
-         $temp= $request->image_path->move(public_path('images'), $imageName);
-            //dd("anything");
+        $temp= $request->image_path->move(public_path('images'), $imageName);
 
-  //          $newImageName = $request->name . ' website';
-            //dd($newImageName); //<-works fine
-            //. '-' . $request->created_at . '.' . $request->image_path->extention();
-            //dd($newImageName);
-          //  dd(public_path());
-            // $request->image->move(public_path('images'),$newImageName);
-            // $request->image->store(public_path('images'),$newImageName);
-            //return $newImageName;
-
-            //dd($request);
-            // $product = new Product ;
-            // $product->image_path = $temp;
-            // $request->image_path=$temp;
-            // echo  $temp ;
-            // dd($request->image_path);
-
-       Product::create($request->all());
-       return redirect('index');
+        Product::create($request->all());
+        return redirect('index');
 
     }
 
