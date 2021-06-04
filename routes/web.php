@@ -35,7 +35,7 @@ Route::get('/item', [ProductsController::class, 'item'])->name('item');
 
 Auth::routes();
 //home routes
-Route::get('/home/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home/index');
+Route::get('/home/index', [HomeController::class, 'index'])->name('home');
 
 //employee routes
 Route::get('/employees/index', [EmployeesController::class, 'index']);

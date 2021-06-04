@@ -47,7 +47,7 @@ class ProductsController extends Controller
     {
         try{
             $request->validate([
-                'image_path'=> 'required | mimes: jpg, png, jpeg ',
+                'image_path'=> 'required | mimes:jpg,png,jpeg',
                 'catagory'=>'required',
                 'product_number'=>'required',
                 'name'=>'required ',
@@ -57,8 +57,10 @@ class ProductsController extends Controller
                 'inventory'=> 'required'
             ]);
         } catch (Error $e) {
-            report($e);
-            
+            //report($e);
+                echo"<pre>";
+                print_r($e);
+                exit();
             return false;
         }
         $imageName = time().'.'.$request->image_path->extension();  
