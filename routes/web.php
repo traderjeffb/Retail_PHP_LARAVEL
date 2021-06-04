@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 //use App\Http\Controllers\Auth;
@@ -25,16 +26,16 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [ProductsController::class, 'welcome']);
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
-Route::get('/edit/{id}', [ProductsController::class, 'edit']);
+Route::get('/edit/{id}', [ProductsController::class, 'edit'])->name('products/edit');
 Route::get('/details/{id}', [ProductsController::class, 'details']);
-Route::get('/delete/{id}', [ProductsController::class, 'delete']);
-Route::get('/create', [ProductsController::class, 'create']);
+Route::get('/delete/{id}', [ProductsController::class, 'delete'])->name('products/delete');
+Route::get('/create', [ProductsController::class, 'create'])->name('products/create');
 Route::get('/item', [ProductsController::class, 'item'])->name('item');
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//home routes
+Route::get('/home/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home/index');
 
 //employee routes
 Route::get('/employees/index', [EmployeesController::class, 'index']);
