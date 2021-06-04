@@ -23,7 +23,7 @@
     </div>
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store')}}">
-       @csrf
+        @csrf
         <div class="form-group">
           <label for="imgage">Select image:</label>
           <input type="file" id="imgage" name="imgage" accept="image/*">
