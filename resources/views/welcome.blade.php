@@ -19,7 +19,13 @@
               <a href="hats"><li>Hats</li></a> 
               <a href="sunglasses"><li>Sunglasses</li></a>  
               <a href="shoes"><li>Shoes</li></a> 
-              <a href="login"><li>Login</li></a>
+              {{-- <a href="{{ url('/jeff').'/123' }}"><li>Login!!!</li></a> --}}
+              {{-- <a href="{{ route('jeff','anything123') }}"><li>Login!!!</li></a> --}}
+              <a href="{{ route('home') }}"><li>Login!!!</li></a>
+
+              {{-- href="{{url('/jeff/{{$val->id}}')}}"
+              href="{{ URL('/jeff/'.$val->id )}}" --}}
+
             </ul>
           </div>
         </section>
