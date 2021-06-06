@@ -31,11 +31,11 @@ Route::get('/details/{id}', [ProductsController::class, 'details']);
 Route::get('/delete/{id}', [ProductsController::class, 'delete'])->name('products/delete');
 Route::get('/create', [ProductsController::class, 'create'])->name('products/create');
 Route::get('/item', [ProductsController::class, 'item'])->name('item');
-
-
+// {{ url('/store') }}
+Route::get('/jeff/{whateverIwriteInURLwillStoreHere}',[ProductsController::class,'jeff'])->name('jeff');
 Auth::routes();
 //home routes
-Route::get('/home/index', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //employee routes
 Route::get('/employees/index', [EmployeesController::class, 'index']);
