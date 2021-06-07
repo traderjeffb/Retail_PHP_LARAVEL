@@ -98,17 +98,24 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        $products= Product::where('id',"=", "$id")->first();
 
-        $products->image_path= $request['image'];
+        $products= Product::where('id',"=", $id)->first();
+
+        $products->image_path= $request['image_path'];
         $products->catagory = $request['catagory'];
         $products->product_number = $request['product_number'];
         $products->name = $request['name'];
         $products->price = $request['price'];
         $products->cost = $request['cost'];
         $products->description = $request['description'];
+
+        $products->save();
+
+       // return redirect()->back()->withSuccess('IT WORKS!');
+        return redirect()->route('index')->with('success','Success Message here!');
+
     }
 
     /**
