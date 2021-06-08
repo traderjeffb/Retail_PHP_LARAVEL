@@ -29,14 +29,20 @@
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
-          <input type="text" id="catagory" name="catagory" class="form-control" required="" >
+          <input type="text" id="catagory" name="catagory" class="form-control" required value="{{ old('catagory') }}" required autocomplete="catagory"  >
         </div>
         <div class="form-group">
           <label for="product_number">Product Number</label>
           <input type="number" id="product_number" name="product_number" class="form-control" required="">
-        </div>        <div class="form-group">
+        </div>       
+        <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="form-control" required="">
+          <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"  autocomplete="name" >
+          @error('name')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>        <div class="form-group">
           <label for="price">Retail Price</label>
           <input type="number" step="0.01"
@@ -57,7 +63,7 @@
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-      @if (count($errors) > 0)
+      {{--  @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -65,7 +71,7 @@
             @endforeach
         </ul>
     </div>
-      @endif
+      @endif  --}}
 
       {{-- @if (errors->any())
       <div>
