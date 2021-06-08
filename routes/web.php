@@ -8,6 +8,7 @@ use App\Http\Controllers\SalesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
+
 //use App\Http\Controllers\Auth;
 
 
@@ -26,10 +27,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [ProductsController::class, 'welcome']);
 Route::get('index', [ProductsController::class, 'index']);
 Route::post('/store', [ProductsController::class, 'store']);
-Route::get('/edit/{id}', [ProductsController::class, 'edit'])->name('products/edit');
-Route::get('/details/{id}', [ProductsController::class, 'details']);
-Route::get('/delete/{id}', [ProductsController::class, 'delete'])->name('products/delete');
-Route::get('/create', [ProductsController::class, 'create'])->name('products/create');
+Route::get('/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+Route::get('/details/{id}', [ProductsController::class, 'details'])->name('products.details');
+Route::get('/delete/{id}', [ProductsController::class, 'delete'])->name('products.delete');
+Route::get('/create', [ProductsController::class, 'create'])->name('products.create');
 Route::get('/item', [ProductsController::class, 'item'])->name('item');
 // {{ url('/store') }}
 Route::get('/jeff/{whateverIwriteInURLwillStoreHere}',[ProductsController::class,'jeff'])->name('jeff');
