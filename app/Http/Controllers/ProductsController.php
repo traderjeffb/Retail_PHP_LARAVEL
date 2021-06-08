@@ -45,7 +45,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        try{
+        
             $request->validate([
                 'image_path'=> 'required | mimes:jpg,png,jpeg',
                 'catagory'=>'required',
@@ -56,13 +56,7 @@ class ProductsController extends Controller
                 'description'=> 'required',
                 'inventory'=> 'required'
             ]);
-        } catch (Error $e) {
-            //report($e);
-            foreach ($e as $message) {
-                echo ($e);
-            }
-            return false;
-        }
+
         $imageName = time().'.'.$request->image_path->extension();  
         $temp= $request->image_path->move(public_path('images'), $imageName);
 
@@ -79,9 +73,8 @@ class ProductsController extends Controller
      */
     public function details($id)
     {
-        dd($id);
+        
         $products= Product::where('id',"=", "$id")->first();
-        dd($products);
         return view('products.details', compact('products'));
     }
 
@@ -93,8 +86,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        
-        return view(view:'products.edit');
+        $products= Product::where('id',"=", "$id")->first();
+        //dd($products);
+        return view('products.edit', compact('products'));
     }
 
     /**
@@ -106,7 +100,15 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $products= Product::where('id',"=", "$id")->first();
+
+        $products->image_path= $request['image'];
+        $products->catagory = $request['catagory'];
+        $products->product_number = $request['product_number'];
+        $products->name = $request['name'];
+        $products->price = $request['price'];
+        $products->cost = $request['cost'];
+        $products->description = $request['description'];
     }
 
     /**
@@ -117,9 +119,9 @@ class ProductsController extends Controller
      */
     public function delete($id)
     {
-        //DB::table('products')->where('id', '=', $id)->delete();
-        $products= Product::where('id',"=", "$id")->first();
-
+        $products=Product::where('id',"=", "$id")->first();
+        return view('products.delete', compact('products'));
+        //return redirect('index')->with('status','The record has been deleted');
     }
 
     public function welcome()
