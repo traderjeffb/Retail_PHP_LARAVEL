@@ -10,7 +10,6 @@
 <body>
 
 <div class="container mt-4">
-
   @if(session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -26,28 +25,32 @@
         @csrf
         <div class="form-group">
           <label for="imgage">Select image:</label>
-          <input type="file" id="imgage" name="imgage" accept="image/*">
+          <input type="file" id="imgage" name="imgage" accept="image/*" value = "{{ $products['catagory'] }}" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
-          <input type="text" id="catagory" name="catagory" class="form-control" required="">
+          <input type="text" id="catagory" name="catagory" class="form-control" required="" value = "{{ $products['catagory'] }}">
         </div>
         <div class="form-group">
           <label for="product_number">Product Number</label>
-          <input type="text" id="product_number" name="product_number" class="form-control" required="">
+          <input type="text" id="product_number" name="product_number" class="form-control" required="" value = "{{ $products['product_number'] }}">
         </div>        <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="form-control" required="">
+          <input type="text" id="name" name="name" class="form-control" required 
+          value = "{{ $products['name'] }}">
         </div>        <div class="form-group">
           <label for="price">Retail Price</label>
-          <input type="text" id="price" name="price" class="form-control" required="">
+          <input type="text" id="price" name="price" class="form-control" required 
+          value = "{{ $products['price'] }}">
         </div>        <div class="form-group">
           <label for="cost">Cost</label>
-          <input type="text" id="cost" name="cost" class="form-control" required="">
+          <input type="text" id="cost" name="cost" class="form-control" required 
+          value = "{{ $products['cost'] }}">
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" class="form-control" required=""></textarea>
+          <textarea type="longtext" name="description" id = "description" class="form-control" required 
+          value = "{{ $products['description'] }}"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
