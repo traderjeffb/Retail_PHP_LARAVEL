@@ -21,11 +21,11 @@
       Edit a product
     </div>
     <div class="card-body">
-      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store')}}">
+      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('/update/'.$products['id']) }}">
         @csrf
         <div class="form-group">
-          <label for="imgage">Select image:</label>
-          <input type="file" id="imgage" name="imgage" accept="image/*" value = "{{ $products['catagory'] }}" >
+          <label for="image_path">Select image:</label>
+          <input type="file" id="image_path" name="image_path" accept="image_path/*" value = "{{ $products['catagory'] }}" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
@@ -49,8 +49,8 @@
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea type="longtext" name="description" id = "description" class="form-control" required 
-          value = "{{ $products['description'] }}"></textarea>
+          <textarea type="text" name="description" id = "description" class="form-control" required 
+          >{{ $products['description'] }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

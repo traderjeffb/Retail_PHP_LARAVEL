@@ -25,23 +25,24 @@ use Illuminate\Support\Facades\Auth;
 
 //  ProductsController Routes
 Route::get('/', [ProductsController::class, 'welcome']);
-Route::get('index', [ProductsController::class, 'index']);
+Route::get('index', [ProductsController::class, 'index'])->name('products.index');
 Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
 Route::get('/details/{id}', [ProductsController::class, 'details'])->name('products.details');
 Route::get('/delete/{id}', [ProductsController::class, 'delete'])->name('products.delete');
 Route::get('/create', [ProductsController::class, 'create'])->name('products.create');
 Route::get('/item', [ProductsController::class, 'item'])->name('item');
+Route::post('/update/{id}',[ProductsController::class, 'update'])->name('products.update');
 // {{ url('/store') }}
-Route::get('/jeff/{whateverIwriteInURLwillStoreHere}',[ProductsController::class,'jeff'])->name('jeff');
+// Route::get('/jeff/{whateverIwriteInURLwillStoreHere}',[ProductsController::class,'jeff'])->name('jeff');
 Auth::routes();
 //home routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //employee routes
-Route::get('/employees/index', [EmployeesController::class, 'index']);
-Route::get('/employees/create', [EmployeesController::class, 'create']);
-Route::post('/employees/store', [EmployeesController::class, 'store']);
+Route::get('/employees/index', [EmployeesController::class, 'index'])->name('employees.index');
+Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');
+Route::post('/employees/store', [EmployeesController::class, 'store'])->name('employees.store');
 
 //sales and reporting routes
 Route::get('sales/addItem/{id}', [SalesController::class, 'addItem'])->name('addItem');
