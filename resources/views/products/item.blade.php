@@ -1,7 +1,7 @@
-{{-- @extends('layouts.app')
-@extends('layouts.adminNav') --}}
+@extends('layouts.app')
+@extends('layouts.adminNav')
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <title>Item Page</title>
 </head>
-<body>
+<body> --}}
 <div class="container">
   @foreach($products as $product)
   {{-- <h1>Here are our currently available {{ $product['catagory'] }}</h1> --}}
@@ -50,7 +50,7 @@
   @endforeach
 </div>
 </div>
-</body>
-</html>
+{{-- </body>
+</html> --}}
 
 

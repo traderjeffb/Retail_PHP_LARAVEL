@@ -1,7 +1,7 @@
-@extends('layouts.adminNav')
+
 @extends('layouts.app')
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="styles.css">
   <title>Products</title>
 </head>
-<body>
+<body> --}}
+@section('content')
+    
+  
     <div class="pageTitle">Index of Products</div>
     @if(session('success'))
     <h1>{{session('success')}}</h1>
@@ -47,5 +50,6 @@
       @endforeach
     </tbody>
   </table>
-</body>
-</html>
+@endsection
+{{-- </body>
+</html> --}}
