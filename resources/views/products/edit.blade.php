@@ -25,7 +25,7 @@
         @csrf
         <div class="form-group">
           <label for="image_path">Select image:</label>
-          <input type="file" id="image_path" name="image_path" accept="image_path/*" value = "{{ $products['catagory'] }}" >
+          <input type="file" id="image_path" name="image_path" class="form-control" accept="image_path/*" value = "{{ $products['image_path'] }}" >
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
