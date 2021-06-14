@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-
+@extends('layouts.adminNav')
 {{-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@
     <div class="pageTitle">Index of Products</div>
     @if(session('success'))
     <h1>{{session('success')}}</h1>
-@endif
+    @endif
 
   <table class="table">
     <thead>
