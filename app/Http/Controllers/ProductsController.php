@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\product;
 use Error;
 use Product as GlobalProduct;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -45,7 +46,19 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        
+   //     dd($request['image_path']);
+        if($files=$request->file('image_path')){
+            $path = public_path('images');
+
+            $name= $files->getClientOriginalName();
+         //   dd($name);
+            $files->move($path, $name);
+           // $product= new product;
+            // $product->create([
+            //     'image' => $name
+            // ]);
+        }
+
             $request->validate([
                 'image_path'=> 'required | mimes:jpg,png,jpeg',
                 'catagory'=>'required',
@@ -57,8 +70,17 @@ class ProductsController extends Controller
                 'inventory'=> 'required'
             ]);
 
-        $imageName = time().'.'.$request->image_path->extension();  
-        $temp= $request->image_path->move(public_path('images'), $imageName);
+        //    $file = $request['image_path'];
+        //    $imagePath = $file->getPathName();
+           
+        //     dd($imagePath);
+        //     $image_path = Storage::disk('public')->putFile('images', $request->file('image_path'));
+
+            $request['image_path'] = $name;
+
+        // $imageName = time().'.'.$request->image_path->extension();  
+        // $temp= $request->image_path->move(public_path('images'), $imageName);
+        dd($request->all());
 
         Product::create($request->all());
         return redirect('index');
