@@ -14,17 +14,17 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->sale_id();
-            $table->number('product_id');
-            $table->number('product_number');
+            $table->id('sale_id');
+            $table->integer('product_id');
+            $table->integer('product_number');
             $table->date('item_sale_date');
             $table->string('item_catagory');
-            $table->number('item_name');
-            $table->decimal(8,2,'item_price');
-            $table->decimal(8,2,'item_cost');
-            $table->string('description');
-            $table->number('item_current_inventory');
-            $table->number('item_required_inventory_level');
+            $table->integer('item_name');
+            $table->decimal('item_price',5,2);
+            $table->decimal('item_cost',5,2);
+            $table->longText('description');
+            $table->integer('item_current_inventory');
+            $table->integer('item_required_inventory_level');
             $table->timestamps();
         });
     }
