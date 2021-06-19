@@ -47,17 +47,6 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
    //     dd($request['image_path']);
-        if($files=$request->file('image_path')){
-            $path = public_path('images');
-
-            $name= $files->getClientOriginalName();
-         //   dd($name);
-            $files->move($path, $name);
-           // $product= new product;
-            // $product->create([
-            //     'image' => $name
-            // ]);
-        }
 
             $request->validate([
                 'image_path'=> 'required | mimes:jpg,png,jpeg',
@@ -69,20 +58,30 @@ class ProductsController extends Controller
                 'description'=> 'required',
                 'inventory'=> 'required'
             ]);
-
-        //    $file = $request['image_path'];
-        //    $imagePath = $file->getPathName();
+            if($files=$request->file('image_path')){
+                $path = public_path('images');
+    
+                $name= $files->getClientOriginalName();
+             //   dd($name);
+                $files->move($path, $name);
+            }
            
-        //     dd($imagePath);
-        //     $image_path = Storage::disk('public')->putFile('images', $request->file('image_path'));
+        //     $image_path = Storage::disk('public')->putFile('images', $request->file('image_path')
+        //Product::create($request->all());
+        $product = new Product();
+        $product->image_path = $name;
+        $product->catagory = $request->get('catagory');
+        $product->product_number = $request->get('product_number');
+        $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->cost = $request->get('cost');
+        $product->description = $request->get('description');
+        $product->inventory = $request->get('inventory');
+        $product->save();
 
-            $request['image_path'] = $name;
 
-        // $imageName = time().'.'.$request->image_path->extension();  
-        // $temp= $request->image_path->move(public_path('images'), $imageName);
-        dd($request->all());
 
-        Product::create($request->all());
+
         return redirect('index');
 
     }
