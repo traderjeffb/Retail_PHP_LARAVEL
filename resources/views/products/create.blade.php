@@ -5,8 +5,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 </head>
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+</style>
 <body>
 
 <div class="container mt-4">
@@ -25,7 +32,9 @@
        @csrf
         <div class="form-group">
           <label for="image_path">Select image:</label>
-          <input type="file" id="image_path" name="image_path" >
+          <input type="file" id="image_path" name="image_path"onchange="readURL(this);" >
+          <img id="blah" src="#" alt="your image" />
+
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
@@ -63,25 +72,24 @@
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-      {{--  @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-      @endif  --}}
-
-      {{-- @if (errors->any())
-      <div>
-        @foreach(errors->all()as $error)
-        <li style="color:red;">{{ $error }}</li>
-      </div>
-      @endforeach 
-      @endif --}}
     </div>
   </div>
 </div>    
 </body>
 </html>
+<script>
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
