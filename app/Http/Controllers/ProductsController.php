@@ -78,11 +78,7 @@ class ProductsController extends Controller
         $product->description = $request->get('description');
         $product->inventory = $request->get('inventory');
         $product->save();
-
-
-
-
-        return redirect('index');
+        return view('products.index');
 
     }
 
@@ -121,10 +117,32 @@ class ProductsController extends Controller
      */
     public function update(Request $request,$id)
     {
-
+       // dd($request->all());
         $products= Product::where('id',"=", $id)->first();
 
-        $products->image_path= $request['image_path'];
+        $request->validate([
+            'image_path'=> 'required',
+            'catagory'=>'required',
+            'product_number'=>'required',
+            'name'=>'required ',
+            'price'=>'required',
+            'cost'=>'required',
+            'description'=> 'required',
+          //  'inventory'=> 'required'
+        ]);
+
+        if($files=$request->file('image_path')){
+            $path = public_path('images');
+
+            $name= $files->getClientOriginalName();
+         //   dd($name);
+            $files->move($path, $name);
+        }
+
+
+
+        $products->image_path = $name+
+        ;
         $products->catagory = $request['catagory'];
         $products->product_number = $request['product_number'];
         $products->name = $request['name'];
@@ -135,7 +153,7 @@ class ProductsController extends Controller
         $products->save();
 
        // return redirect()->back()->withSuccess('IT WORKS!');
-        return redirect()->route('index')->with('success','Success Message here!');
+        return redirect()->route('products.index')->with('success','Success Message here!');
 
     }
 
