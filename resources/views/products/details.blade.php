@@ -16,8 +16,8 @@
         <form name="add-blog-post-form" id="add-blog-post-form" method="" action="{{url('index')}}">
           @csrf
           <div class="form-group">
-          <img alt="GeeksforGeeks logo" width="200" height="200"
-            src="{{ asset('images') }}\{{$products['image_path']}}">
+            <td  class="tableData"><img alt="GeeksforGeeks logo" width="150" height="200"
+              src="{{ asset('images') }}\{{$products['image_path']}}"></td>
           </div>
           <div class="form-group">
             <label for="catagory">Catagory</label>
@@ -42,7 +42,7 @@
           <div class="form-group">
             <label for="description">Description</label>
             <textarea type="longtext" name="description" id = "description" class="form-control" readonly 
-            value = "{{ $products['description'] }}"></textarea>
+            >{{ $products['description'] }}</textarea>
           </div>
           <button type="submit" class="btn btn-primary">Back to Index</button>
         </form>
