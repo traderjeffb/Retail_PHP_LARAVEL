@@ -34,7 +34,6 @@
           <label for="image_path">Select image:</label>
           <input type="file" id="image_path" name="image_path"onchange="readURL(this);" >
           <img id="blah" src="#" alt="your image" />
-
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
