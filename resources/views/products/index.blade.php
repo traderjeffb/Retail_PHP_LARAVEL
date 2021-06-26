@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 @extends('layouts.adminNav')
 @section('content')
     <div class="pageTitle">Index of Products</div>
