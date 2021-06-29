@@ -141,8 +141,7 @@ class ProductsController extends Controller
 
 
 
-        $products->image_path = $name+
-        ;
+        $products->image_path = $name;
         $products->catagory = $request['catagory'];
         $products->product_number = $request['product_number'];
         $products->name = $request['name'];
