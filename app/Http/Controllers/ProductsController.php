@@ -27,7 +27,11 @@ class ProductsController extends Controller
 
         return view('products.index', compact('products'));
     }
-
+    public function jeff()
+    {
+        $jeffinfo = "I am a programmer"
+        return view ('jeff', jeffinfo);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -78,7 +82,7 @@ class ProductsController extends Controller
         $product->description = $request->get('description');
         $product->inventory = $request->get('inventory');
         $product->save();
-        return view('products.index');
+        return redirect('index')->with('success','Success Message here!');
 
     }
 
@@ -148,11 +152,12 @@ class ProductsController extends Controller
         $products->price = $request['price'];
         $products->cost = $request['cost'];
         $products->description = $request['description'];
+        $products->inventory = $request['inventory'];
 
         $products->save();
 
        // return redirect()->back()->withSuccess('IT WORKS!');
-        return redirect()->route('products.index')->with('success','Success Message here!');
+       return redirect('index')->with('success','Success Message here!');
 
     }
 
@@ -173,11 +178,11 @@ class ProductsController extends Controller
     {
         return view('welcome');
     }
-    public function jeff($functionwillstoreValueInthisParameter)
-    {
-        //return view('welcome');
-        dd($functionwillstoreValueInthisParameter);
-    }
+    // public function jeff($functionwillstoreValueInthisParameter)
+    // {
+    //     //return view('welcome');
+    //     dd($functionwillstoreValueInthisParameter);
+    // }
 
     public function item()
     {   
