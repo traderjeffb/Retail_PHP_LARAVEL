@@ -60,7 +60,7 @@
         </div>       
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"  autocomplete="name" >
+          <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"  autocomplete="name" required="" >
           @error('name')
           <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -91,16 +91,16 @@
           <label for="description">Description</label>
           <textarea name="description" class="form-control @error('description') is-invalid @enderror" required="" value="{{ old('sescription') }}"></textarea>
         </div>
+        <div class="form-group">
+          <label for="inventory">Inventory</label>
+          <input type="number" step="0.01"
+            id="inventory" name="inventory" class="form-control @error('inventory') is-invalid @enderror" required="" value="{{ old('inventory') }}">     
+            @error('inventory')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
       </div>        
-      <div class="form-group">
-        <label for="inventory">Inventory</label>
-        <input type="number" step="0.01"
-          id="inventory" name="inventory" class="form-control @error('inventory') is-invalid @enderror" required="" value="{{ old('inventory') }}">     
-          @error('inventory')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-          </span>
-          @enderror
 
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
