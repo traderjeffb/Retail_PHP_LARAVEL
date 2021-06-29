@@ -32,16 +32,31 @@
        @csrf
         <div class="form-group">
           <label for="image_path">Select image:</label>
-          <input type="file" id="image_path" name="image_path"onchange="readURL(this);" >
+          <input type="file" id="image_path" name="image_path"onchange="readURL(this);" class="form-control @error('image_path') is-invalid @enderror" value="{{ old('image_path') }}">
           <img id="blah" src="#" alt="your image" />
+          @error('image_path')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>
         <div class="form-group">
           <label for="catagory">Catagory</label>
-          <input type="text" id="catagory" name="catagory" class="form-control" required value="{{ old('catagory') }}" required autocomplete="catagory"  >
+          <input type="text" id="catagory" name="catagory" class="form-control @error('catagory') is-invalid @enderror" required value="{{ old('catagory') }}" required autocomplete="catagory"  >
+          @error('catagory')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>
         <div class="form-group">
           <label for="product_number">Product Number</label>
-          <input type="number" id="product_number" name="product_number" class="form-control" required="">
+          <input type="number" id="product_number" name="product_number" class="form-control @error('product_number') is-invalid @enderror" required="" value="{{ old('product_number') }}">
+          @error('product_number')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>       
         <div class="form-group">
           <label for="name">Name</label>
@@ -51,23 +66,42 @@
               <strong>{{ $message }}</strong>
           </span>
           @enderror
-        </div>        <div class="form-group">
+        </div>        
+        <div class="form-group">
           <label for="price">Retail Price</label>
           <input type="number" step="0.01"
-            id="price" name="price" class="form-control" required="">
-        </div>        <div class="form-group">
+            id="price" name="price" class="form-control @error('price') is-invalid @enderror" required="" value="{{ old('price') }}">
+            @error('price')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>       
+         <div class="form-group">
           <label for="cost">Cost</label>
           <input type="number" step="0.01"
-            id="cost" name="cost" class="form-control" required="">
+            id="cost" name="cost" class="form-control @error('cost') is-invalid @enderror" required="" value="{{ old('cost') }}">
+            @error('cost')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" class="form-control" required=""></textarea>
+          <textarea name="description" class="form-control @error('description') is-invalid @enderror" required="" value="{{ old('sescription') }}"></textarea>
         </div>
-      </div>        <div class="form-group">
-        <label for="cost">Inventory</label>
+      </div>        
+      <div class="form-group">
+        <label for="inventory">Inventory</label>
         <input type="number" step="0.01"
-          id="inventory" name="inventory" class="form-control" required="">
+          id="inventory" name="inventory" class="form-control @error('inventory') is-invalid @enderror" required="" value="{{ old('inventory') }}">     
+          @error('inventory')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
