@@ -24,6 +24,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //  ProductsController Routes
+// return view('');
+// return view ('products.create'); // to load a view
+// return view ('products.index'co); // to load a view
+
+// return redirect('/index'); // to go to url
+// return redirect()->route('products.index'); // to go to a named route
+Route::get ('/jeffGettingInfo/{id}',[ProductsController:: class, 'jeffGettingInfo'])->name('jeffGettingInfo');
+Route::post ('/jeffGettingInfo/{id}',[ProductsController:: class, 'jeffGettingInfo'])->name('jeffGettingInfo');
+
+Route::get ('/jeff',[ProductsController:: class, 'jeff'])->name('jeff');
 Route::get('/', [ProductsController::class, 'welcome']);
 Route::get('index', [ProductsController::class, 'index'])->name('products.index');
 Route::post('/store', [ProductsController::class, 'store']);
