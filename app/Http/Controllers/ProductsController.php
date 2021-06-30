@@ -27,10 +27,16 @@ class ProductsController extends Controller
 
         return view('products.index', compact('products'));
     }
-    public function jeff()
+    public function jeff(Request $request)
     {
-        $jeffinfo = "I am a programmer"
-        return view ('jeff', jeffinfo);
+        //dd($request);
+        $jeffinfo = "I am a programmer";
+        return view('jeff', compact ('jeffinfo'));
+    }
+    public function jeffGettingInfo($id)
+    {
+        $myId = $id;
+        return view('jeffGettingInfo',compact ('myId')); 
     }
     /**
      * Show the form for creating a new resource.
